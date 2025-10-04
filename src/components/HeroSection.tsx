@@ -14,7 +14,7 @@ export default function HeroSection() {
   }, []);
   
   return (
-    <section id="hero" style={{ backgroundColor: '#FFD700', minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '4rem', position: 'relative' }}>
+    <section id="hero" style={{ backgroundColor: '#FFD700', minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '4rem', position: 'relative', overflow: 'hidden' }}>
       <div style={{ 
         width: '100%', 
         maxWidth: '1400px', 
@@ -22,11 +22,12 @@ export default function HeroSection() {
         padding: isMobile ? '0 1rem' : '0 2rem', 
         display: 'flex', 
         alignItems: 'center', 
-        minHeight: 'calc(100vh - 4rem)'
+        minHeight: 'calc(100vh - 4rem)',
+        boxSizing: 'border-box'
       }}>
         
         {/* Left side - Main content */}
-        <div style={{ flex: '1', maxWidth: '950px' }}>
+        <div style={{ flex: '1', maxWidth: '950px', width: '100%', overflowWrap: 'break-word' }}>
           <motion.h1 
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}

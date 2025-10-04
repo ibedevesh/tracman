@@ -1,8 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 export default function Footer() {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const whatsappMessage = encodeURIComponent("Hey I'm interested in Tracman.");
   const whatsappLink = `https://wa.me/916399935535?text=${whatsappMessage}`;
 
@@ -15,7 +25,7 @@ export default function Footer() {
         <div style={{
           maxWidth: '1400px',
           margin: '0 auto',
-          padding: '0 2rem'
+          padding: isMobile ? '0 1rem' : '0 2rem'
         }}>
           
           {/* Navigation Links */}
@@ -61,12 +71,14 @@ export default function Footer() {
           {/* Bottom Section */}
           <div style={{
             display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-end',
+            justifyContent: isMobile ? 'center' : 'space-between',
+            alignItems: isMobile ? 'center' : 'flex-end',
+            flexDirection: isMobile ? 'column' : 'row',
             flexWrap: 'wrap',
             gap: '2rem',
             paddingTop: '2rem',
-            borderTop: '2px solid #cccccc'
+            borderTop: '2px solid #cccccc',
+            textAlign: isMobile ? 'center' : 'initial'
           }}>
             
             {/* Left Side - Contact Info */}
@@ -163,7 +175,7 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
               style={{
-                textAlign: 'right'
+                textAlign: isMobile ? 'center' : 'right'
               }}
             >
               <div style={{

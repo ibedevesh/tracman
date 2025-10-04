@@ -211,7 +211,7 @@ export default function BlueServicesSection() {
                   backgroundColor: 'rgba(255, 215, 0, 0.1)',
                   padding: '2rem',
                   border: '2px solid #FFD700',
-                  marginLeft: 'clamp(140px, 17vw, 220px)'
+                  marginLeft: isMobile ? '0' : 'clamp(140px, 17vw, 220px)'
                 }}>
                   <p style={{
                     fontSize: 'clamp(1.1rem, 2vw, 1.4rem)',

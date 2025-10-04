@@ -1,8 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 export default function EndingSection() {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const whatsappMessage = encodeURIComponent("Hey I'm interested in Tracman.");
   const whatsappLink = `https://wa.me/916399935535?text=${whatsappMessage}`;
 
@@ -19,8 +29,9 @@ export default function EndingSection() {
       <div style={{
         position: 'absolute',
         top: '15%',
-        left: '10%',
-        transform: 'rotate(-15deg)'
+        left: isMobile ? '5%' : '10%',
+        transform: 'rotate(-15deg)',
+        display: isMobile ? 'none' : 'block'
       }}>
         <div style={{
           width: '80px',
@@ -44,8 +55,9 @@ export default function EndingSection() {
       <div style={{
         position: 'absolute',
         top: '20%',
-        right: '15%',
-        transform: 'rotate(25deg)'
+        right: isMobile ? '5%' : '15%',
+        transform: 'rotate(25deg)',
+        display: isMobile ? 'none' : 'block'
       }}>
         <div style={{
           width: '60px',
@@ -69,9 +81,10 @@ export default function EndingSection() {
       <div style={{
         maxWidth: '1400px',
         margin: '0 auto',
-        padding: '0 2rem',
+        padding: isMobile ? '0 1rem' : '0 2rem',
         textAlign: 'center',
-        width: '100%'
+        width: '100%',
+        boxSizing: 'border-box'
       }}>
         
         <motion.h1

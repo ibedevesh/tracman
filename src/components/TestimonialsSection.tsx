@@ -42,7 +42,8 @@ export default function TestimonialsSection() {
       <div style={{
         maxWidth: '1400px',
         margin: '0 auto',
-        padding: '0 2rem'
+        padding: isMobile ? '0 1rem' : '0 2rem',
+        overflow: 'hidden'
       }}>
         
         {/* Header */}
@@ -73,7 +74,7 @@ export default function TestimonialsSection() {
             display: 'inline-block'
           }}>
             {/* Large quote mark - opening */}
-            <div style={{
+            {!isMobile && <div style={{
               position: 'absolute',
               top: '-1rem',
               left: '-3rem',
@@ -84,7 +85,7 @@ export default function TestimonialsSection() {
               transform: 'rotate(180deg)'
             }}>
               "
-            </div>
+            </div>}
             
             <h2 style={{
               fontSize: 'clamp(4rem, 10vw, 8rem)',
@@ -102,7 +103,7 @@ export default function TestimonialsSection() {
             </h2>
 
             {/* Large quote mark - closing */}
-            <div style={{
+            {!isMobile && <div style={{
               position: 'absolute',
               bottom: '-2rem',
               right: '-3rem',
@@ -112,7 +113,7 @@ export default function TestimonialsSection() {
               lineHeight: '1'
             }}>
               "
-            </div>
+            </div>}
           </div>
 
           <div style={{
