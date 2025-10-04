@@ -14,7 +14,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Tracman AEO Team" }],
   robots: "index, follow",
-  canonical: "https://tracman.xyz",
+  alternates: {
+    canonical: "https://tracman.xyz",
+  },
   openGraph: {
     title: "Get Your Product Recommended by AI - Tracman AEO Agency",
     description: "77% of Americans now use ChatGPT as search engine. Reddit is 40.1% of all AI citations. We make AI models recommend YOUR product automatically with proven AEO strategies.",
