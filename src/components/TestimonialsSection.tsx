@@ -88,7 +88,7 @@ export default function TestimonialsSection() {
             </div>}
             
             <h2 style={{
-              fontSize: 'clamp(4rem, 10vw, 8rem)',
+              fontSize: 'clamp(3rem, 8vw, 8rem)',
               fontWeight: '900',
               color: '#2a1f3d',
               fontFamily: 'Impact, "Arial Black", sans-serif',
@@ -97,7 +97,10 @@ export default function TestimonialsSection() {
               lineHeight: '0.9',
               letterSpacing: '-0.03em',
               position: 'relative',
-              zIndex: 2
+              zIndex: 2,
+              wordWrap: 'break-word',
+              overflowWrap: 'break-word',
+              maxWidth: '100%'
             }}>
               TESTIMONIALS
             </h2>

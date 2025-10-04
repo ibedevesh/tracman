@@ -93,14 +93,18 @@ export default function EndingSection() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           style={{
-            fontSize: 'clamp(4rem, 12vw, 10rem)',
+            fontSize: 'clamp(2.5rem, 8vw, 10rem)',
             fontWeight: '900',
             color: '#ffffff',
             fontFamily: 'Impact, "Arial Black", sans-serif',
             textTransform: 'uppercase',
             lineHeight: '0.9',
             letterSpacing: '-0.04em',
-            margin: '0 0 2rem 0'
+            margin: '0 0 2rem 0',
+            wordWrap: 'break-word',
+            overflowWrap: 'break-word',
+            maxWidth: '100%',
+            hyphens: 'auto'
           }}
         >
           LET'S BUILD SOMETHING UNFORGETTABLE
